@@ -15,7 +15,7 @@ class ConfigNode:
 
 class Config:
     def __init__(self):
-        with open("part2/config.yaml", "r") as yaml_file:
+        with open("config.yaml", "r") as yaml_file:
             self.config = yaml.safe_load(yaml_file)
 
         self.screen = ConfigNode(**self.config["screen"])
@@ -26,12 +26,12 @@ class Config:
                             "persimmon", "apple", "pear", "peach", "pineapple",
                             "melon", "watermelon"]
 
-        self.background_blit = pygame.image.load("blits/background.png")
-        self.cloud_blit = pygame.image.load("blits/cloud.png")
+        self.background_blit = pygame.image.load("img/background.png")
+        self.cloud_blit = pygame.image.load("img/cloud.png")
 
         for name in self.fruit_names:
             self.config[name]["blit"] = pygame.transform.scale(
-                pygame.image.load(f"blits/{name}.png"),
+                pygame.image.load(f"img/{name}.png"),
                 size=self.config[name]["size"],
             )
 

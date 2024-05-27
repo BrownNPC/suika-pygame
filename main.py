@@ -12,7 +12,10 @@ from wall import Wall
 
 
 # Create Pygame window
-screen = pygame.display.set_mode((config.screen.width, config.screen.height))
+pygame.init()
+# screen = pygame.display.set_mode((config.screen.width, config.screen.height))
+screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+# print(screen)
 pygame.display.set_caption("PySuika")
 clock = pygame.time.Clock()
 
